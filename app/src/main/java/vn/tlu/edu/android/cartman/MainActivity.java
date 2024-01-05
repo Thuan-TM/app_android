@@ -11,6 +11,7 @@ import android.util.Log;
 import androidx.core.view.MenuItemCompat;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import vn.tlu.edu.android.cartman.cart.CartActivity;
@@ -19,6 +20,7 @@ import vn.tlu.edu.android.cartman.databinding.ActivityMainBinding;
 import vn.tlu.edu.android.cartman.product.model.ProductRepository;
 import vn.tlu.edu.android.cartman.product.adapter.ProductsAdapter;
 import vn.tlu.edu.android.cartman.product.model.Product;
+
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,7 +34,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
+//    private ActivityMainBinding binding;
 
     ProductRepository productRepository;
     RecyclerView rvProduct;
@@ -44,17 +46,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-        setSupportActionBar(binding.toolbar);
+        setContentView(R.layout.activity_main);
+//        binding = ActivityMainBinding.inflate(getLayoutInflater());
+//        setContentView(binding.getRoot());
+//        setSupportActionBar(binding.toolbar);
         initData();
 
-        rvProduct = binding.rvproduct;
+//        rvProduct = binding.rvproduct;
+        rvProduct = findViewById(R.id.rvproduct);
 
-//        LinearLayoutManager llm = new LinearLayoutManager(this);
-//        llm.setOrientation(LinearLayoutManager.VERTICAL);
-//        rvProduct.setLayoutManager(llm);
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        rvProduct.setLayoutManager(llm);
+
+
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
         rvProduct.setLayoutManager(mLayoutManager);

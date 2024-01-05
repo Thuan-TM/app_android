@@ -14,16 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="0dp">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.CartMan.PopupOverlay" />
-
-    </com.google.android.material.appbar.AppBarLayout>
+        android:layout_marginTop="0dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvproduct"
